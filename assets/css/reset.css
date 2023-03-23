@@ -1,0 +1,135 @@
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+
+  .weather-header {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+
+  .form-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .weather-search {
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid #ddd;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  .weather-search:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background-color: #0062cc;
+  }
+  
+  .weather-hr {
+    border-top: 2px solid #ddd;
+  }
+  
+
+  .list-group {
+    margin-top: 20px;
+  }
+  
+  .list-group-item {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f2f2f2;
+  }
+  
+
+  #today {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 3px;
+  }
+  
+  #today h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  
+  #today img {
+    vertical-align: middle;
+    margin-left: 10px;
+  }
+  
+  #today p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  
+
+  #forecast {
+    margin-top: 20px;
+  }
+  
+  .forecast-card {
+    background-color: #f8f9fa;
+    border-radius: 3px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .forecast-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  
+  .forecast-card img {
+    vertical-align: middle;
+    margin-left: 10px;
+  }
+  
+  .forecast-card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }

@@ -85,4 +85,27 @@ function getForecast(city) {
       }
     });
   }
-  
+
+  // Define a function to handle the form submission
+    searchForm.on("submit", function (event) {
+    event.preventDefault();
+    var city = searchInput.val().trim();
+    if (city) {
+    // Get the weather data for the city and add it to the search history
+    getWeather(city);
+    addToSearchHistory(city);
+    searchInput.val("");
+    }
+    });
+    
+    // Define a function to add a city to the search history
+    function addToSearchHistory(city) {
+    // Create a button for the city and add it to the search history
+    var button = $("<button>").addClass("btn btn-secondary").text(city);
+    searchHistory.append(button);
+    
+    // Add an event listener to the button to get the weather data for the city when it is clicked
+    button.on("click", function () {
+    getWeather(city);
+    });
+    }

@@ -109,3 +109,18 @@ function getForecast(city) {
     getWeather(city);
     });
     }
+
+    // Define a function to load the last searched city on page load
+    function loadLastSearchedCity() {
+    // Get the last searched city from local storage
+    var lastSearchedCity = localStorage.getItem("lastSearchedCity");
+    
+    if (lastSearchedCity) {
+    // Get the weather data for the last searched city
+    getWeather(lastSearchedCity);
+    }
+    }
+    
+    // Call the loadLastSearchedCity function on page load
+    loadLastSearchedCity();
+    

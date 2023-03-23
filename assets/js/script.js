@@ -40,3 +40,49 @@ function getWeather(city) {
     getForecast(city);
   });
 }
+
+// Define a function to get the 5-day forecast for a city
+function getForecast(city) {
+    var queryURL =
+      "https://api.openweathermap.org/data/2.5/forecast?q=" +
+      city +
+      "&units=metric&appid=" +
+      apiKey;
+  
+    // Make the API request
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    }).then(function (response) {
+      // Create an array of the forecast data for each day
+      var forecastData = response.list.filter(function (forecast) {
+        return forecast.dt_txt.includes("12:00:00");
+      });
+  
+      // Create HTML for each day's forecast and add it to the page
+      $("#forecast").html("");
+      for (var i = 0; i < forecastData.length; i++) {
+        var forecast = forecastData[i];
+        var iconURL =
+          "https://openweathermap.org/img/w/" + forecast.weather[0].icon + ".png";
+        var temperature = forecast.main.temp;
+        var humidity = forecast.main.humidity;
+        var date = moment(forecast.dt_txt).format("ddd, MMM Do");
+  
+        var forecastHTML = `
+          <div class="col-lg-2">
+            <div class="card bg-primary text-white">
+              <div class="card-body p-2">
+                <h5 class="card-title">${date}</h5>
+                <img src="${iconURL}" alt="${forecast.weather[0].description}" />
+                <p class="card-text">Temp: ${temperature} &deg;C</p>
+                <p class="card-text">Humidity: ${humidity}%</p>
+              </div>
+            </div>
+          </div>
+        `;
+        $("#forecast").append(forecastHTML);
+      }
+    });
+  }
+  
